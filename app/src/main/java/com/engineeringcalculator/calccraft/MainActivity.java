@@ -51,341 +51,360 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvsec = findViewById(R.id.idTVSecondary);
-        tvMain = findViewById(R.id.idTVPrimary);
-        bac = findViewById(R.id.idBtnAC);
-        bc = findViewById(R.id.idBtnC);
-        bbrac1 = findViewById(R.id.idBtnBrac1);
-        bbrac2 = findViewById(R.id.idBtnBrac2);
-        bsin = findViewById(R.id.idBtnSin);
-        bcos = findViewById(R.id.idBtnCos);
-        btan = findViewById(R.id.idBtnTan);
-        blog = findViewById(R.id.idBtnLog);
-        bln = findViewById(R.id.idBtnLog);
-        bfact = findViewById(R.id.idBtnfact);
-        bsquare = findViewById(R.id.idBtnSquare);
-        bsqrt = findViewById(R.id.idBtnRoot);
-        binv = findViewById(R.id.idBtnInv);
-        b0 = findViewById(R.id.idBtn0);
-        b9 = findViewById(R.id.idBtn9);
-        b8 = findViewById(R.id.idBtn8);
-        b7 = findViewById(R.id.idBtn7);
-        b6 = findViewById(R.id.idBtn6);
-        b5 = findViewById(R.id.idBtn5);
-        b4 = findViewById(R.id.idBtn4);
-        b3 = findViewById(R.id.idBtn3);
-        b2 = findViewById(R.id.idBtn2);
-        b1 = findViewById(R.id.idBtn1);
-        bpi = findViewById(R.id.idBtnPi);
-        bmul = findViewById(R.id.idBtnMul);
-        bminus = findViewById(R.id.idBtnSub);
-        bplus = findViewById(R.id.idBtnAdd);
-        bequal = findViewById(R.id.idBtnEqual);
-        bdot = findViewById(R.id.idBtnDot);
-        bdiv = findViewById(R.id.idBtnDiv);
-
-        // Delay the animation for a few milliseconds to ensure the view is initialized
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // Create and set up the animation
-                Animation slideInAnimation = new TranslateAnimation(
-                        Animation.RELATIVE_TO_PARENT, 1.0f, // Start from outside the right of the view
-                        Animation.RELATIVE_TO_PARENT, 0.0f, // End at the original position (left)
-                        Animation.RELATIVE_TO_PARENT, 0.0f,
-                        Animation.RELATIVE_TO_PARENT, 0.0f
-                );
-
-                slideInAnimation.setDuration(1000); // Adjust the duration as needed
-                tvsec.startAnimation(slideInAnimation);
-                tvsec.setVisibility(View.VISIBLE); // Make the TextView visible after the animation
-            }
-        }, 500); // Delay for 500 milliseconds (adjust as needed)
+        try {
 
 
-        b0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "0");
-            }
-        });
+            tvsec = findViewById(R.id.idTVSecondary);
+            tvMain = findViewById(R.id.idTVPrimary);
+            bac = findViewById(R.id.idBtnAC);
+            bc = findViewById(R.id.idBtnC);
+            bbrac1 = findViewById(R.id.idBtnBrac1);
+            bbrac2 = findViewById(R.id.idBtnBrac2);
+            bsin = findViewById(R.id.idBtnSin);
+            bcos = findViewById(R.id.idBtnCos);
+            btan = findViewById(R.id.idBtnTan);
+            blog = findViewById(R.id.idBtnLog);
+            bln = findViewById(R.id.idBtnLog);
+            bfact = findViewById(R.id.idBtnfact);
+            bsquare = findViewById(R.id.idBtnSquare);
+            bsqrt = findViewById(R.id.idBtnRoot);
+            binv = findViewById(R.id.idBtnInv);
+            b0 = findViewById(R.id.idBtn0);
+            b9 = findViewById(R.id.idBtn9);
+            b8 = findViewById(R.id.idBtn8);
+            b7 = findViewById(R.id.idBtn7);
+            b6 = findViewById(R.id.idBtn6);
+            b5 = findViewById(R.id.idBtn5);
+            b4 = findViewById(R.id.idBtn4);
+            b3 = findViewById(R.id.idBtn3);
+            b2 = findViewById(R.id.idBtn2);
+            b1 = findViewById(R.id.idBtn1);
+            bpi = findViewById(R.id.idBtnPi);
+            bmul = findViewById(R.id.idBtnMul);
+            bminus = findViewById(R.id.idBtnSub);
+            bplus = findViewById(R.id.idBtnAdd);
+            bequal = findViewById(R.id.idBtnEqual);
+            bdot = findViewById(R.id.idBtnDot);
+            bdiv = findViewById(R.id.idBtnDiv);
 
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "1");
-            }
-        });
+            // Delay the animation for a few milliseconds to ensure the view is initialized
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    // Create and set up the animation
+                    Animation slideInAnimation = new TranslateAnimation(
+                            Animation.RELATIVE_TO_PARENT, 1.0f, // Start from outside the right of the view
+                            Animation.RELATIVE_TO_PARENT, 0.0f, // End at the original position (left)
+                            Animation.RELATIVE_TO_PARENT, 0.0f,
+                            Animation.RELATIVE_TO_PARENT, 0.0f
+                    );
 
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "2");
-            }
-        });
-
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "3");
-            }
-        });
-
-        b4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "4");
-            }
-        });
-
-        b5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "5");
-            }
-        });
-
-        b6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "6");
-            }
-        });
-
-        b7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "7");
-            }
-        });
-
-        b8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "8");
-            }
-        });
-
-        b9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "9");
-            }
-        });
-
-        // Similarly, set onClickListeners for the other buttons...
-        // (omitting them for brevity)
-
-        // Decimal Point
-        bdot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + ".");
-            }
-        });
-
-        bbrac1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tvMain.setText(tvMain.getText().toString() + "(");
-            }
-        });
-
-        bbrac2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tvMain.setText(tvMain.getText().toString() + ")");
-            }
-        });
-
-        bpi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                tvMain.setText(tvMain.getText().toString() + "3.142");
-                tvsec.setText("π");
-            }
-        });
-
-        bac.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText("");
-                tvsec.setText("");
-            }
-        });
-
-        bc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String str = tvMain.getText().toString();
-                if (!str.equals("")) {
-                    str = str.substring(0, str.length() - 1);
-                    tvMain.setText(str);
+                    slideInAnimation.setDuration(1000); // Adjust the duration as needed
+                    tvsec.startAnimation(slideInAnimation);
+                    tvsec.setVisibility(View.VISIBLE); // Make the TextView visible after the animation
                 }
-            }
-        });
+            }, 500); // Delay for 500 milliseconds (adjust as needed)
 
-        // Square (e.g., 2^2)
-        bsquare.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (tvMain.getText().toString().isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please enter a valid number..", Toast.LENGTH_SHORT).show();
-                } else {
-                    double d = Double.parseDouble(tvMain.getText().toString());
-                    double square = d * d;
-                    tvMain.setText(String.valueOf(square));
-                    tvsec.setText(d + "²");
+
+            b0.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "0");
                 }
-            }
-        });
+            });
 
-
-        // Addition
-        bplus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "+");
-            }
-        });
-
-        // Subtraction
-        bminus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String str = tvMain.getText().toString();
-                if (!str.isEmpty() && !str.endsWith("-")) {
-                    tvMain.setText(str + "-");
+            b1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "1");
                 }
-            }
-        });
+            });
 
-        // Multiplication
-        bmul.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String str = tvMain.getText().toString();
-                if (!str.isEmpty() && !str.endsWith("*")) {
-                    tvMain.setText(str + "*");
+            b2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "2");
                 }
-            }
-        });
+            });
 
-        // Division
-        bdiv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String str = tvMain.getText().toString();
-                if (!str.isEmpty() && !str.endsWith("/")) {
-                    tvMain.setText(str + "/");
+            b3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "3");
                 }
-            }
-        });
+            });
 
-        // Equals (Evaluate)
-        bequal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String str = tvMain.getText().toString();
-                if (!str.isEmpty()) {
-                    double result = evaluate(str);
-                    tvMain.setText(String.valueOf(result));
-                    tvsec.setText(str);
-                } else {
-                    // Handle the case where the input is empty
-                    Toast.makeText(MainActivity.this, "Please enter an expression", Toast.LENGTH_SHORT).show();
+            b4.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "4");
                 }
-            }
-        });
+            });
 
-
-        // Inverse (e.g., 2^-1)
-        binv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "^(-1)");
-            }
-        });
-
-        // Square Root
-        bsqrt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String str = tvMain.getText().toString();
-                if (!str.isEmpty()) {
-                    double number = Double.parseDouble(str);
-                    double result = Math.sqrt(number);
-                    tvMain.setText(String.valueOf(result));
-                    tvsec.setText("√" + str);
+            b5.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "5");
                 }
-            }
-        });
+            });
 
-        // Factorial (e.g., 5!)
-        bfact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String str = tvMain.getText().toString();
-                if (!str.isEmpty()) {
-                    int value = Integer.parseInt(str);
-                    if (value >= 0) { // Check for non-negative input
-                        int result = factorial(value);
-                        tvMain.setText(String.valueOf(result));
-                        tvsec.setText(str + "!");
-                    } else {
-                        // Handle negative input (optional)
-                        Toast.makeText(MainActivity.this, "Factorial is not defined for negative numbers", Toast.LENGTH_SHORT).show();
+            b6.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "6");
+                }
+            });
+
+            b7.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "7");
+                }
+            });
+
+            b8.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "8");
+                }
+            });
+
+            b9.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "9");
+                }
+            });
+
+            // Similarly, set onClickListeners for the other buttons...
+            // (omitting them for brevity)
+
+            // Decimal Point
+            bdot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + ".");
+                }
+            });
+
+            bbrac1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tvMain.setText(tvMain.getText().toString() + "(");
+                }
+            });
+
+            bbrac2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tvMain.setText(tvMain.getText().toString() + ")");
+                }
+            });
+
+            bpi.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    tvMain.setText(tvMain.getText().toString() + "3.142");
+                    tvsec.setText("π");
+                }
+            });
+
+            bac.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText("");
+                    tvsec.setText("");
+                }
+            });
+
+            bc.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String str = tvMain.getText().toString();
+                    if (!str.equals("")) {
+                        str = str.substring(0, str.length() - 1);
+                        tvMain.setText(str);
                     }
-                } else {
-                    // Handle empty input (optional)
-                    Toast.makeText(MainActivity.this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
+            });
+
+            // Square (e.g., 2^2)
+            bsquare.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String currentText = tvMain.getText().toString();
+                    // Check if the current text ends with a trigonometric operator or an operator
+                    if (currentText.endsWith("sin") || currentText.endsWith("cos") || currentText.endsWith("tan") ||
+                            currentText.endsWith("log") || currentText.endsWith("ln") || isOperator(currentText.substring(currentText.length() - 1))) {
+                        Toast.makeText(MainActivity.this, "Invalid operation", Toast.LENGTH_SHORT).show();
+                    } else {
+                        tvMain.setText(currentText + "^2");
+                    }
+                }
+            });
 
 
-        // Trigonometric Functions (e.g., sin, cos, tan)
-        bsin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "sin");
-            }
-        });
 
-        bcos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "cos");
-            }
-        });
+            // Addition
+            bplus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "+");
+                }
+            });
 
-        btan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "tan");
-            }
-        });
+            // Subtraction
+            bminus.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String str = tvMain.getText().toString();
+                    if (!str.isEmpty() && !str.endsWith("-")) {
+                        tvMain.setText(str + "-");
+                    }
+                }
+            });
 
-        // Logarithmic Functions (e.g., log, ln)
-        blog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "log");
-            }
-        });
+            // Multiplication
+            bmul.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String str = tvMain.getText().toString();
+                    if (!str.isEmpty() && !str.endsWith("*")) {
+                        tvMain.setText(str + "*");
+                    }
+                }
+            });
 
-        bln.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvMain.setText(tvMain.getText().toString() + "ln");
-            }
-        });
+            // Division
+            bdiv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String str = tvMain.getText().toString();
+                    if (!str.isEmpty() && !str.endsWith("/")) {
+                        tvMain.setText(str + "/");
+                    }
+                }
+            });
+
+            // Equals (Evaluate)
+            bequal.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String str = tvMain.getText().toString();
+                    if (!str.isEmpty()) {
+                        double result = evaluate(str);
+                        tvMain.setText(String.valueOf(result));
+                        tvsec.setText(str);
+                    } else {
+                        // Handle the case where the input is empty
+                        Toast.makeText(MainActivity.this, "Please enter an expression", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
 
-        // Similarly, set onClickListeners for the other buttons...
-        // (omitting them for brevity)
+            // Inverse (e.g., 2^-1)
+            binv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "^(-1)");
+                }
+            });
+
+            // Square Root
+            bsqrt.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String str = tvMain.getText().toString();
+                    if (!str.isEmpty()) {
+                        double number = Double.parseDouble(str);
+                        double result = Math.sqrt(number);
+                        tvMain.setText(String.valueOf(result));
+                        tvsec.setText("√" + str);
+                    }
+                }
+            });
+
+            // Factorial (e.g., 5!)
+            bfact.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String str = tvMain.getText().toString();
+                    if (!str.isEmpty()) {
+                        int value = Integer.parseInt(str);
+                        if (value >= 0) { // Check for non-negative input
+                            int result = factorial(value);
+                            tvMain.setText(String.valueOf(result));
+                            tvsec.setText(str + "!");
+                        } else {
+                            // Handle negative input (optional)
+                            Toast.makeText(MainActivity.this, "Factorial is not defined for negative numbers", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        // Handle empty input (optional)
+                        Toast.makeText(MainActivity.this, "Please enter a valid number", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+
+            // Trigonometric Functions (e.g., sin, cos, tan)
+            bsin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "sin");
+                }
+            });
+
+            bcos.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "cos");
+                }
+            });
+
+            btan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "tan");
+                }
+            });
+
+            // Logarithmic Functions (e.g., log, ln)
+            blog.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "log");
+                }
+            });
+
+            bln.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvMain.setText(tvMain.getText().toString() + "ln");
+                }
+            });
+
+
+            // Similarly, set onClickListeners for the other buttons...
+            // (omitting them for brevity)
+
+        }catch (Exception e)
+        {
+            Toast.makeText(MainActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
+    private boolean isTrigonometricOperator(String text) {
+        return text.equals("sin") || text.equals("cos") || text.equals("tan") || text.equals("log") || text.equals("ln");
+    }
+
+    private boolean isOperator(String text) {
+        return text.equals("+") || text.equals("-") || text.equals("*") || text.equals("/") || text.equals("^") || text.equals("√");
+    }
+
+    //############### Here ###########
     // Implement the factorial and evaluate methods...
 
     // Factorial function
@@ -466,15 +485,23 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         throw new RuntimeException("Unexpected: " + (char) ch);
                     }
+
+                    // Check if the square operation "^2" immediately follows
+                    if (pos < str.length() && ch == '^' && str.charAt(pos + 1) == '2') {
+                        x = Math.pow(x, 2);
+                        pos++; // Skip the '2'
+                    }
+
                     if (eat('^')) x = Math.pow(x, parseFactor()); // exponentiation
                     return x;
                 }
             }.parse();
-        } catch(Exception e){
+        } catch (Exception e){
             Toast.makeText(MainActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             return Double.NaN; // Return a special value to indicate an error
         }
     }
+
 
 
 }
