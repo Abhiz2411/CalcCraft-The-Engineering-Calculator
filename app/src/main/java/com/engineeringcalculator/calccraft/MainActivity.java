@@ -233,15 +233,16 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     String currentText = tvMain.getText().toString();
-                    // Check if the current text ends with a trigonometric operator or an operator
-                    if (currentText.endsWith("sin") || currentText.endsWith("cos") || currentText.endsWith("tan") ||
-                            currentText.endsWith("log") || currentText.endsWith("ln") || isOperator(currentText.substring(currentText.length() - 1))) {
-                        Toast.makeText(MainActivity.this, "Invalid operation", Toast.LENGTH_SHORT).show();
-                    } else {
+                    // Check if the current text ends with a valid operand or operator
+                    if (!currentText.isEmpty() && (isOperator(currentText.substring(currentText.length() - 1)) || isTrigonometricOperator(currentText.substring(currentText.length() - 3)))) {
                         tvMain.setText(currentText + "^2");
+                    } else {
+                        // Display a toast message for invalid operation
+                        Toast.makeText(MainActivity.this, "Invalid operation. Operand required.", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
+
 
 
 
