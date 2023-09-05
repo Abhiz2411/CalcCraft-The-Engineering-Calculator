@@ -233,8 +233,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     String currentText = tvMain.getText().toString();
-                    // Check if the current text ends with a valid operand or operator
-                    if (!currentText.isEmpty() && (isOperator(currentText.substring(currentText.length() - 1)) || isTrigonometricOperator(currentText.substring(currentText.length() - 3)))) {
+
+                    // Check if the current text is empty or ends with a valid operator
+                    if (!currentText.isEmpty() && !isOperator(currentText.substring(currentText.length() - 1))) {
                         tvMain.setText(currentText + "^2");
                     } else {
                         // Display a toast message for invalid operation
@@ -242,6 +243,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             });
+
+
 
 
 
@@ -487,15 +490,19 @@ public class MainActivity extends AppCompatActivity {
                         throw new RuntimeException("Unexpected: " + (char) ch);
                     }
 
-                    // Check if the square operation "^2" immediately follows
-                    if (pos < str.length() && ch == '^' && str.charAt(pos + 1) == '2') {
-                        x = Math.pow(x, 2);
-                        pos++; // Skip the '2'
+                    // Check if the square operation "^2" follows
+                    if (eat('^')) {
+                        if (eat('2')) {
+                            x = Math.pow(x, 2);
+                        } else {
+                            throw new RuntimeException("Expected '2' after '^' for square operation");
+                        }
                     }
 
-                    if (eat('^')) x = Math.pow(x, parseFactor()); // exponentiation
                     return x;
                 }
+
+
             }.parse();
         } catch (Exception e){
             Toast.makeText(MainActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
